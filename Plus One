@@ -1,0 +1,13 @@
+class Solution(object):
+    def plusOne(self, digits):
+        sum=0
+        for i in digits:
+            sum=(sum*10)+i
+        sum+=1
+        res=[]
+        while sum>0:
+            res.append(sum%10)
+            sum//=10
+        res.reverse()
+        return res
+        
