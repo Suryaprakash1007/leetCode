@@ -1,0 +1,13 @@
+class Solution(object):
+    def majorityElement(self, nums):
+        count=0
+        maj=0
+        for i in range(len(nums)):
+            if count==0 and maj!=nums[i]:
+                maj=nums[i]
+                count+=1
+            elif maj==nums[i]:
+                count+=1
+            else:
+                count-=1
+        return maj
