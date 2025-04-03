@@ -1,0 +1,16 @@
+class Solution(object):
+    def singleNumber(self, nums):
+        u=[]
+        d=[]
+        for i in nums:
+            if i not in u:
+                u.append(i)
+            else:
+                d.append(i)
+
+        for j in u:
+            if j not in d:
+                return j
+                break
+
+        
