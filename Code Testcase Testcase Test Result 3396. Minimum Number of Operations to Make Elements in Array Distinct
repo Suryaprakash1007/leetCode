@@ -1,0 +1,29 @@
+class Solution(object):
+    def minimumOperations(self, nums):
+        count=0
+        if self.arrunique(nums):
+            return 0
+        else:
+            if len(nums)<3:
+                count+=1
+            while len(nums)>=3:
+                count+=1
+                nums=nums[3:]
+                u1=self.arrunique(nums)
+                if u1:
+                    break
+                if len(nums)==2:
+                    count+=1
+        return count
+    def arrunique(self, nums):
+        u=[]
+        for i in nums:
+            if i not in u:
+                u.append(i)
+        if nums==u:
+            return True
+        else:
+            return False
+
+            
+            
