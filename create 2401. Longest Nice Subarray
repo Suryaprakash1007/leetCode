@@ -1,0 +1,14 @@
+class Solution(object):
+    def longestNiceSubarray(self, nums):
+        sum=0
+        l=0
+        s=0
+        for i in range(len(nums)):
+            while sum & nums[i]:
+                sum=sum^nums[l]
+                l=l+1
+            s=max(s,i-l+1)
+            sum=sum|nums[i]
+        return s
+        
+        
